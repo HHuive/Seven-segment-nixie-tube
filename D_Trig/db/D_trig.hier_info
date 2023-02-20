@@ -1,0 +1,206 @@
+|LED_DRV
+clk => clk~0.IN2
+LED_Bit[0] <= decode3_8:U3.Y
+LED_Bit[1] <= decode3_8:U3.Y
+LED_Bit[2] <= decode3_8:U3.Y
+LED_Bit[3] <= decode3_8:U3.Y
+LED_Bit[4] <= decode3_8:U3.Y
+LED_Bit[5] <= decode3_8:U3.Y
+LED_Bit[6] <= decode3_8:U3.Y
+LED_Bit[7] <= decode3_8:U3.Y
+LED_Seg[0] <= BCD_7Seg:U5.SEG7
+LED_Seg[1] <= BCD_7Seg:U5.SEG7
+LED_Seg[2] <= BCD_7Seg:U5.SEG7
+LED_Seg[3] <= BCD_7Seg:U5.SEG7
+LED_Seg[4] <= BCD_7Seg:U5.SEG7
+LED_Seg[5] <= BCD_7Seg:U5.SEG7
+LED_Seg[6] <= BCD_7Seg:U5.SEG7
+LED_Seg[7] <= BCD_7Seg:U5.SEG7
+
+
+|LED_DRV|div:U1
+clk => ~NO_FANOUT~
+f0 <= <GND>
+
+
+|LED_DRV|cnt10_4:U2
+Clk => Clk~0.IN4
+Reset => Reset~0.IN4
+Q0[0] <= cnt_10:U0.Q
+Q0[1] <= cnt_10:U0.Q
+Q0[2] <= cnt_10:U0.Q
+Q0[3] <= cnt_10:U0.Q
+Q1[0] <= cnt_10:U1.Q
+Q1[1] <= cnt_10:U1.Q
+Q1[2] <= cnt_10:U1.Q
+Q1[3] <= cnt_10:U1.Q
+Q2[0] <= cnt_10:U2.Q
+Q2[1] <= cnt_10:U2.Q
+Q2[2] <= cnt_10:U2.Q
+Q2[3] <= cnt_10:U2.Q
+Q3[0] <= cnt_10:U3.Q
+Q3[1] <= cnt_10:U3.Q
+Q3[2] <= cnt_10:U3.Q
+Q3[3] <= cnt_10:U3.Q
+
+
+|LED_DRV|cnt10_4:U2|cnt_10:U0
+Clk => Qint[0].CLK
+Clk => Qint[1].CLK
+Clk => Qint[2].CLK
+Clk => Qint[3].CLK
+Reset => Qint[0].ACLR
+Reset => Qint[1].ACLR
+Reset => Qint[2].ACLR
+Reset => Qint[3].ACLR
+En => Qint[0].ENA
+En => Qint[3].ENA
+En => Qint[2].ENA
+En => Qint[1].ENA
+Q[0] <= Qint[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Qint[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Qint[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Qint[3].DB_MAX_OUTPUT_PORT_TYPE
+Full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LED_DRV|cnt10_4:U2|cnt_10:U1
+Clk => Qint[0].CLK
+Clk => Qint[1].CLK
+Clk => Qint[2].CLK
+Clk => Qint[3].CLK
+Reset => Qint[0].ACLR
+Reset => Qint[1].ACLR
+Reset => Qint[2].ACLR
+Reset => Qint[3].ACLR
+En => Qint[0].ENA
+En => Qint[3].ENA
+En => Qint[2].ENA
+En => Qint[1].ENA
+Q[0] <= Qint[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Qint[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Qint[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Qint[3].DB_MAX_OUTPUT_PORT_TYPE
+Full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LED_DRV|cnt10_4:U2|cnt_10:U2
+Clk => Qint[0].CLK
+Clk => Qint[1].CLK
+Clk => Qint[2].CLK
+Clk => Qint[3].CLK
+Reset => Qint[0].ACLR
+Reset => Qint[1].ACLR
+Reset => Qint[2].ACLR
+Reset => Qint[3].ACLR
+En => Qint[0].ENA
+En => Qint[3].ENA
+En => Qint[2].ENA
+En => Qint[1].ENA
+Q[0] <= Qint[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Qint[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Qint[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Qint[3].DB_MAX_OUTPUT_PORT_TYPE
+Full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LED_DRV|cnt10_4:U2|cnt_10:U3
+Clk => Qint[0].CLK
+Clk => Qint[1].CLK
+Clk => Qint[2].CLK
+Clk => Qint[3].CLK
+Reset => Qint[0].ACLR
+Reset => Qint[1].ACLR
+Reset => Qint[2].ACLR
+Reset => Qint[3].ACLR
+En => Qint[0].ENA
+En => Qint[3].ENA
+En => Qint[2].ENA
+En => Qint[1].ENA
+Q[0] <= Qint[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Qint[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Qint[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Qint[3].DB_MAX_OUTPUT_PORT_TYPE
+Full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LED_DRV|decode3_8:U3
+A[0] => Decoder0.IN2
+A[1] => Decoder0.IN1
+A[2] => Decoder0.IN0
+Y[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LED_DRV|Mux4bit_8_1:U4
+Data0_i[0] => Mux3.IN0
+Data0_i[1] => Mux2.IN0
+Data0_i[2] => Mux1.IN0
+Data0_i[3] => Mux0.IN0
+Data1_i[0] => Mux3.IN1
+Data1_i[1] => Mux2.IN1
+Data1_i[2] => Mux1.IN1
+Data1_i[3] => Mux0.IN1
+Data2_i[0] => Mux3.IN2
+Data2_i[1] => Mux2.IN2
+Data2_i[2] => Mux1.IN2
+Data2_i[3] => Mux0.IN2
+Data3_i[0] => Mux3.IN3
+Data3_i[1] => Mux2.IN3
+Data3_i[2] => Mux1.IN3
+Data3_i[3] => Mux0.IN3
+Data4_i[0] => Mux3.IN4
+Data4_i[1] => Mux2.IN4
+Data4_i[2] => Mux1.IN4
+Data4_i[3] => Mux0.IN4
+Data5_i[0] => Mux3.IN5
+Data5_i[1] => Mux2.IN5
+Data5_i[2] => Mux1.IN5
+Data5_i[3] => Mux0.IN5
+Data6_i[0] => Mux3.IN6
+Data6_i[1] => Mux2.IN6
+Data6_i[2] => Mux1.IN6
+Data6_i[3] => Mux0.IN6
+Data7_i[0] => Mux3.IN7
+Data7_i[1] => Mux2.IN7
+Data7_i[2] => Mux1.IN7
+Data7_i[3] => Mux0.IN7
+Data_out[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Data_out[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Data_out[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Data_out[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Sel[0] => Mux0.IN10
+Sel[0] => Mux1.IN10
+Sel[0] => Mux2.IN10
+Sel[0] => Mux3.IN10
+Sel[1] => Mux0.IN9
+Sel[1] => Mux1.IN9
+Sel[1] => Mux2.IN9
+Sel[1] => Mux3.IN9
+Sel[2] => Mux0.IN8
+Sel[2] => Mux1.IN8
+Sel[2] => Mux2.IN8
+Sel[2] => Mux3.IN8
+
+
+|LED_DRV|BCD_7Seg:U5
+BCD_Data[0] => Decoder0.IN3
+BCD_Data[1] => Decoder0.IN2
+BCD_Data[2] => Decoder0.IN1
+BCD_Data[3] => Decoder0.IN0
+SEG7[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+SEG7[7] <= <VCC>
+
+

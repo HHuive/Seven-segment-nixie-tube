@@ -1,0 +1,12 @@
+module cnt_3bit ( clk,Q0,Q1,Q2) ;
+input clk;
+ 
+output Q0,Q1,Q2;
+
+wire nQ0 , nQ1 , nQ2; 
+
+D_trig D0 (clk   , nQ0 , Q0  , nQ0);
+D_trig D1 (nQ0 , nQ1 , Q1  , nQ1);
+D_trig D2 (nQ1 , nQ2 , Q2  , nQ2);
+	
+endmodule

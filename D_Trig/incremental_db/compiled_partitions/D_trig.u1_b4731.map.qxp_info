@@ -1,0 +1,63 @@
+167805952
+Version 9.0 Build 132 02/25/2009 SJ Full Version
+1556419719
+4
+-------------------------------
+Entity
+div
+Revision
+trig
+Device
+EP2C8Q208C8
+Total logic elements
+34 / 8256 ( < 1 )
+    -- Combinational with no register
+13
+    -- Register only
+0
+    -- Combinational with a register
+21
+
+
+Logic element usage by number of LUT inputs
+
+    -- 4 input functions
+6
+    -- 3 input functions
+8
+    -- <=2 input functions
+20
+    -- Register only
+0
+
+
+Logic elements by mode
+
+    -- normal mode
+15
+    -- arithmetic mode
+19
+
+
+Total registers
+21
+    -- Dedicated logic registers
+21 / 8256 ( < 1 )
+    -- I/O registers
+0
+
+
+Total LABs:  partially or completely used
+34 / 516 ( 6 )
+
+
+Virtual pins
+0
+I/O pins
+2
+Embedded Multiplier 9-bit elements
+0 / 36 ( 0 )
+Total memory bits
+0
+Total RAM block bits
+0

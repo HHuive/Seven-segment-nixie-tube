@@ -1,0 +1,436 @@
+Analysis & Synthesis report for D_trig
+Sat Nov 19 14:32:51 2022
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Source assignments for div:U1
+  6. Port Connectivity Checks: "Mux4bit_8_1:U4"
+  7. Port Connectivity Checks: "decode3_8:U3"
+  8. Port Connectivity Checks: "cnt10_4:U2|cnt_10:U3"
+  9. Port Connectivity Checks: "cnt10_4:U2|cnt_10:U0"
+ 10. Port Connectivity Checks: "cnt10_4:U2"
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Sat Nov 19 14:32:51 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name                      ; D_trig                                      ;
+; Top-level Entity Name              ; LED_DRV                                     ;
+; Family                             ; Cyclone II                                  ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C8Q208C8        ;                    ;
+; Top-level entity name                                                      ; LED_DRV            ; D_trig             ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for div:U1                                                                   ;
++--------------------------------------------------------+--------------------+------+------------+
+; Assignment                                             ; Value              ; From ; To         ;
++--------------------------------------------------------+--------------------+------+------------+
+; LOCATION                                               ; PIN_150            ;      ; LED_Bit[0] ;
+; LOCATION                                               ; PIN_149            ;      ; LED_Bit[1] ;
+; LOCATION                                               ; PIN_152            ;      ; LED_Bit[2] ;
+; LOCATION                                               ; PIN_151            ;      ; LED_Bit[3] ;
+; LOCATION                                               ; PIN_205            ;      ; LED_Bit[4] ;
+; LOCATION                                               ; PIN_206            ;      ; LED_Bit[5] ;
+; LOCATION                                               ; PIN_207            ;      ; LED_Bit[6] ;
+; LOCATION                                               ; PIN_208            ;      ; LED_Bit[7] ;
+; LOCATION                                               ; PIN_170            ;      ; LED_SEG[0] ;
+; LOCATION                                               ; PIN_165            ;      ; LED_SEG[1] ;
+; LOCATION                                               ; PIN_169            ;      ; LED_SEG[2] ;
+; LOCATION                                               ; PIN_175            ;      ; LED_SEG[3] ;
+; LOCATION                                               ; PIN_173            ;      ; LED_SEG[4] ;
+; LOCATION                                               ; PIN_168            ;      ; LED_SEG[5] ;
+; LOCATION                                               ; PIN_164            ;      ; LED_SEG[6] ;
+; LOCATION                                               ; PIN_171            ;      ; LED_SEG[7] ;
+; LOCATION                                               ; PIN_23             ;      ; clk        ;
+; LOCATION                                               ; PIN_180            ;      ; f0         ;
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP                    ; OFF                ;      ;            ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH                  ; 2                  ;      ;            ;
+; OPTIMIZE_POWER_DURING_SYNTHESIS                        ; NORMAL COMPILATION ;      ;            ;
+; BLOCK_RAM_TO_MLAB_CELL_CONVERSION                      ; ON                 ;      ;            ;
+; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO               ;      ;            ;
+; BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; CARE               ;      ;            ;
+; OPTIMIZE_POWER_DURING_FITTING                          ; NORMAL COMPILATION ;      ;            ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA                ; OFF                ;      ;            ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC                         ; OFF                ;      ;            ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION                ; OFF                ;      ;            ;
+; PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA        ; OFF                ;      ;            ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING                   ; OFF                ;      ;            ;
+; PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING      ; OFF                ;      ;            ;
+; ENABLE_BENEFICIAL_SKEW_OPTIMIZATION                    ; ON                 ;      ;            ;
+; POWER_REPORT_SIGNAL_ACTIVITY                           ; OFF                ;      ;            ;
+; POWER_REPORT_POWER_DISSIPATION                         ; OFF                ;      ;            ;
+; MUX_RESTRUCTURE                                        ; AUTO               ;      ;            ;
+; STATE_MACHINE_PROCESSING                               ; AUTO               ;      ;            ;
+; SAFE_STATE_MACHINE                                     ; OFF                ;      ;            ;
+; IGNORE_VERILOG_INITIAL_CONSTRUCTS                      ; OFF                ;      ;            ;
+; VERILOG_CONSTANT_LOOP_LIMIT                            ; 5000               ;      ;            ;
+; VERILOG_NON_CONSTANT_LOOP_LIMIT                        ; 250                ;      ;            ;
+; DSP_BLOCK_BALANCING                                    ; AUTO               ;      ;            ;
+; NOT_GATE_PUSH_BACK                                     ; ON                 ;      ;            ;
+; REMOVE_REDUNDANT_LOGIC_CELLS                           ; OFF                ;      ;            ;
+; REMOVE_DUPLICATE_REGISTERS                             ; ON                 ;      ;            ;
+; IGNORE_CARRY_BUFFERS                                   ; OFF                ;      ;            ;
+; IGNORE_CASCADE_BUFFERS                                 ; OFF                ;      ;            ;
+; IGNORE_GLOBAL_BUFFERS                                  ; OFF                ;      ;            ;
+; IGNORE_ROW_GLOBAL_BUFFERS                              ; OFF                ;      ;            ;
+; IGNORE_LCELL_BUFFERS                                   ; OFF                ;      ;            ;
+; MAX7000_IGNORE_LCELL_BUFFERS                           ; AUTO               ;      ;            ;
+; IGNORE_SOFT_BUFFERS                                    ; ON                 ;      ;            ;
+; MAX7000_IGNORE_SOFT_BUFFERS                            ; OFF                ;      ;            ;
+; AUTO_GLOBAL_CLOCK_MAX                                  ; ON                 ;      ;            ;
+; AUTO_GLOBAL_OE_MAX                                     ; ON                 ;      ;            ;
+; MAX_AUTO_GLOBAL_REGISTER_CONTROLS                      ; ON                 ;      ;            ;
+; AUTO_IMPLEMENT_IN_ROM                                  ; OFF                ;      ;            ;
+; APEX20K_TECHNOLOGY_MAPPER                              ; LUT                ;      ;            ;
+; OPTIMIZATION_TECHNIQUE                                 ; BALANCED           ;      ;            ;
+; STRATIXII_OPTIMIZATION_TECHNIQUE                       ; BALANCED           ;      ;            ;
+; CYCLONE_OPTIMIZATION_TECHNIQUE                         ; BALANCED           ;      ;            ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE                       ; BALANCED           ;      ;            ;
+; STRATIX_OPTIMIZATION_TECHNIQUE                         ; BALANCED           ;      ;            ;
+; MAXII_OPTIMIZATION_TECHNIQUE                           ; BALANCED           ;      ;            ;
+; MAX7000_OPTIMIZATION_TECHNIQUE                         ; SPEED              ;      ;            ;
+; APEX20K_OPTIMIZATION_TECHNIQUE                         ; BALANCED           ;      ;            ;
+; MERCURY_OPTIMIZATION_TECHNIQUE                         ; AREA               ;      ;            ;
+; FLEX6K_OPTIMIZATION_TECHNIQUE                          ; AREA               ;      ;            ;
+; FLEX10K_OPTIMIZATION_TECHNIQUE                         ; AREA               ;      ;            ;
+; ALLOW_XOR_GATE_USAGE                                   ; ON                 ;      ;            ;
+; AUTO_LCELL_INSERTION                                   ; ON                 ;      ;            ;
+; CARRY_CHAIN_LENGTH                                     ; 48                 ;      ;            ;
+; FLEX6K_CARRY_CHAIN_LENGTH                              ; 32                 ;      ;            ;
+; FLEX10K_CARRY_CHAIN_LENGTH                             ; 32                 ;      ;            ;
+; MERCURY_CARRY_CHAIN_LENGTH                             ; 48                 ;      ;            ;
+; STRATIX_CARRY_CHAIN_LENGTH                             ; 70                 ;      ;            ;
+; STRATIXII_CARRY_CHAIN_LENGTH                           ; 70                 ;      ;            ;
+; CASCADE_CHAIN_LENGTH                                   ; 2                  ;      ;            ;
+; PARALLEL_EXPANDER_CHAIN_LENGTH                         ; 16                 ;      ;            ;
+; MAX7000_PARALLEL_EXPANDER_CHAIN_LENGTH                 ; 4                  ;      ;            ;
+; AUTO_CARRY_CHAINS                                      ; ON                 ;      ;            ;
+; AUTO_CASCADE_CHAINS                                    ; ON                 ;      ;            ;
+; AUTO_PARALLEL_EXPANDERS                                ; ON                 ;      ;            ;
+; AUTO_OPEN_DRAIN_PINS                                   ; ON                 ;      ;            ;
+; AUTO_ROM_RECOGNITION                                   ; ON                 ;      ;            ;
+; AUTO_RAM_RECOGNITION                                   ; ON                 ;      ;            ;
+; AUTO_DSP_RECOGNITION                                   ; ON                 ;      ;            ;
+; AUTO_SHIFT_REGISTER_RECOGNITION                        ; AUTO               ;      ;            ;
+; AUTO_CLOCK_ENABLE_RECOGNITION                          ; ON                 ;      ;            ;
+; STRICT_RAM_RECOGNITION                                 ; OFF                ;      ;            ;
+; ALLOW_SYNCH_CTRL_USAGE                                 ; ON                 ;      ;            ;
+; FORCE_SYNCH_CLEAR                                      ; OFF                ;      ;            ;
+; AUTO_RAM_TO_LCELL_CONVERSION                           ; OFF                ;      ;            ;
+; AUTO_RESOURCE_SHARING                                  ; OFF                ;      ;            ;
+; ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION                     ; OFF                ;      ;            ;
+; ALLOW_ANY_ROM_SIZE_FOR_RECOGNITION                     ; OFF                ;      ;            ;
+; ALLOW_ANY_SHIFT_REGISTER_SIZE_FOR_RECOGNITION          ; OFF                ;      ;            ;
+; MAX7000_FANIN_PER_CELL                                 ; 100                ;      ;            ;
+; SYNTH_TIMING_DRIVEN_SYNTHESIS                          ; OFF                ;      ;            ;
+; IGNORE_MAX_FANOUT_ASSIGNMENTS                          ; OFF                ;      ;            ;
+; USE_HIGH_SPEED_ADDER                                   ; AUTO               ;      ;            ;
+; SYNTH_GATED_CLOCK_CONVERSION                           ; OFF                ;      ;            ;
+; BLOCK_DESIGN_NAMING                                    ; AUTO               ;      ;            ;
+; SHIFT_REGISTER_RECOGNITION_ACLR_SIGNAL                 ; ON                 ;      ;            ;
+; AUTO_MERGE_PLLS                                        ; ON                 ;      ;            ;
+; IGNORE_MODE_FOR_MERGE                                  ; OFF                ;      ;            ;
+; SLOW_SLEW_RATE                                         ; OFF                ;      ;            ;
+; PCI_IO                                                 ; OFF                ;      ;            ;
+; TURBO_BIT                                              ; ON                 ;      ;            ;
+; WEAK_PULL_UP_RESISTOR                                  ; OFF                ;      ;            ;
+; ENABLE_BUS_HOLD_CIRCUITRY                              ; OFF                ;      ;            ;
+; AUTO_GLOBAL_MEMORY_CONTROLS                            ; OFF                ;      ;            ;
+; AUTO_PACKED_REGISTERS_STRATIXII                        ; AUTO               ;      ;            ;
+; AUTO_PACKED_REGISTERS_MAXII                            ; AUTO               ;      ;            ;
+; AUTO_PACKED_REGISTERS_CYCLONE                          ; AUTO               ;      ;            ;
+; AUTO_PACKED_REGISTERS                                  ; OFF                ;      ;            ;
+; AUTO_PACKED_REGISTERS_STRATIX                          ; AUTO               ;      ;            ;
+; NORMAL_LCELL_INSERT                                    ; ON                 ;      ;            ;
+; CARRY_OUT_PINS_LCELL_INSERT                            ; ON                 ;      ;            ;
+; XSTL_INPUT_ALLOW_SE_BUFFER                             ; OFF                ;      ;            ;
+; TREAT_BIDIR_AS_OUTPUT                                  ; OFF                ;      ;            ;
+; AUTO_TURBO_BIT                                         ; ON                 ;      ;            ;
+; AUTO_GLOBAL_CLOCK                                      ; ON                 ;      ;            ;
+; AUTO_GLOBAL_OE                                         ; ON                 ;      ;            ;
+; AUTO_GLOBAL_REGISTER_CONTROLS                          ; ON                 ;      ;            ;
+; SYNCHRONIZER_IDENTIFICATION                            ; OFF                ;      ;            ;
++--------------------------------------------------------+--------------------+------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux4bit_8_1:U4"                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Data0_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data0_i[3..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data0_i[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data1_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data1_i[3..2] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data1_i[1]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data1_i[0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data2_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data2_i[1..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data2_i[3..2] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data3_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data3_i[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data3_i[3]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data3_i[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data4_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data4_i[3]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data4_i[2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data4_i[1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data4_i[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data5_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data5_i[2..1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data5_i[3]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data5_i[0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data6_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data6_i[2..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Data6_i[3]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data7_i       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data7_i[2..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Data7_i[3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Sel           ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decode3_8:U3"                                                                                                                                                                   ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cnt10_4:U2|cnt_10:U3"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "cnt10_4:U2|cnt_10:U0" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; En   ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cnt10_4:U2"                                                                                                                                            ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk   ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; Q0    ; Output  ; Warning          ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q0[3..1]" have no fanouts                        ;
+; Q1    ; Output  ; Warning          ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q1[3..1]" have no fanouts                        ;
+; Q2    ; Output  ; Warning          ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q2[3..1]" have no fanouts                        ;
+; Q3    ; Output  ; Warning          ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q3[3..1]" have no fanouts                        ;
+; Q3    ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; Clk   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Reset ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sat Nov 19 14:32:51 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_trig -c D_trig
+Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file cnt10_4.v
+    Info (12023): Found entity 1: cnt10_4
+Info (12021): Found 1 design units, including 1 entities, in source file cnt_10.v
+    Info (12023): Found entity 1: cnt_10
+Info (12021): Found 1 design units, including 1 entities, in source file div.qxp
+    Info (12023): Found entity 1: div
+Info (12021): Found 1 design units, including 1 entities, in source file d_trig.v
+    Info (12023): Found entity 1: D_trig
+Info (12021): Found 1 design units, including 1 entities, in source file cnt_3bit.v
+    Info (12023): Found entity 1: cnt_3bit
+Warning (10275): Verilog HDL Module Instantiation warning at LED_DRV.v(21): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at LED_DRV.v(33): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file led_drv.v
+    Info (12023): Found entity 1: LED_DRV
+Info (12021): Found 1 design units, including 1 entities, in source file decode3_8.v
+    Info (12023): Found entity 1: decode3_8
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_7seg.v
+    Info (12023): Found entity 1: BCD_7Seg
+Info (12021): Found 1 design units, including 1 entities, in source file mux4bit_8_1.v
+    Info (12023): Found entity 1: Mux4bit_8_1
+Warning (10236): Verilog HDL Implicit Net warning at cnt10_4.v(9): created implicit net for "Full0"
+Warning (10236): Verilog HDL Implicit Net warning at cnt10_4.v(10): created implicit net for "Full1"
+Warning (10236): Verilog HDL Implicit Net warning at cnt10_4.v(11): created implicit net for "Full2"
+Warning (10236): Verilog HDL Implicit Net warning at cnt10_4.v(12): created implicit net for "Full3"
+Info (12127): Elaborating entity "LED_DRV" for the top level hierarchy
+Info (12128): Elaborating entity "div" for hierarchy "div:U1"
+Info (12128): Elaborating entity "cnt10_4" for hierarchy "cnt10_4:U2"
+Info (12128): Elaborating entity "cnt_10" for hierarchy "cnt10_4:U2|cnt_10:U0"
+Warning (10230): Verilog HDL assignment warning at cnt_10.v(15): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at cnt_10.v(20): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "decode3_8" for hierarchy "decode3_8:U3"
+Info (12128): Elaborating entity "Mux4bit_8_1" for hierarchy "Mux4bit_8_1:U4"
+Info (12128): Elaborating entity "BCD_7Seg" for hierarchy "BCD_7Seg:U5"
+Error (12002): Port "clk" does not exist in macrofunction "U2" File: C:/Users/AAA/Desktop/a/5-2/D_Trig/LED_DRV.v Line: 18
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/AAA/Desktop/a/5-2/D_Trig/output_files/D_trig.map.smsg
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 9 warnings
+    Error: Peak virtual memory: 4579 megabytes
+    Error: Processing ended: Sat Nov 19 14:32:51 2022
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/AAA/Desktop/a/5-2/D_Trig/output_files/D_trig.map.smsg.
+
+
